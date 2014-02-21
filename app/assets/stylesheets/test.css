@@ -1,0 +1,302 @@
+		body
+		{
+		font-family: 'Nunito', sans-serif;
+		font-size: px;
+		background-color:#eeeebe;
+		}
+		.container{
+
+
+		margin: 0 auto;
+
+
+
+		}
+		ul#topss li a{
+			text-decoration: none;
+		}
+
+		#botcont{
+
+			margin-top: 300px;
+			margin-bottom: 50px;
+			width: 95%;
+			margin-left: 40px;
+			background-color: #ccc;
+		}
+		#rightside #bigman:hover
+		{margin: 20px; border: 5px solid #eee; 
+			-webkit-box-shadow: 4px 4px 4px rgba(0,0,0,0.2); 
+			-moz-box-shadow: 4px 4px 4px rgba(0,0,0,0.2); 
+			box-shadow: 4px 4px 4px rgba(0,0,0,0.2); 
+			-webkit-transition: all 0.5s ease-out; 
+			-moz-transition: all 0.5s ease; -o-transition: all 
+			0.5s ease; } #ex4 img:hover { -webkit-transform: rotate(-7deg); 
+				-moz-transform: rotate(-7deg); -o-transform: rotate(-7deg); 
+
+
+		}
+		div#midcontent{
+
+			height: px;
+			width: 500px;
+			float: left;
+			margin-right: 0px;
+			margin-bottom: 100px;
+			margin-left: 60px;
+
+		}
+		img#banner
+		{
+			width: 400px;
+			height: 80px;
+			position: center;
+			float: left;
+			border: 8px solid;
+			border-color: #FF9933;
+			
+		}
+		img#rockman{
+		margin-left: 5px;
+		width: 200px;
+		border: 8px solid;
+		opacity: 0.8; border: 10px solid #eee; /*Transition*/ -webkit-transition: all 0.5s ease; -moz-transition: all 0.5s ease; -o-transition: all 0.5s ease; /*Reflection*/ -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.7, transparent), to(rgba(0,0,0,0.1)));
+
+
+		}
+
+		img#rockmanend{
+		margin-left: 200px;
+		width: 200px;
+		border: 8px solid;
+		opacity: 0.8; border: 10px solid #eee; /*Transition*/ -webkit-transition: all 0.5s ease; -moz-transition: all 0.5s ease; -o-transition: all 0.5s ease; /*Reflection*/ -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.7, transparent), to(rgba(0,0,0,0.1)));
+
+
+		}
+
+#botlinkwrap{
+
+	height: px;
+	border: 3px dashed red;
+}
+
+		li.end
+		{
+			
+
+			margin-left: 500px;
+			list-style: none;
+			display: inline;
+		}
+		li#list1
+		{
+			
+			
+			margin-left: 20px;
+			
+			display: inline;
+			
+		}
+		.list2end{
+			margin-left: 20px;
+			list-style: none;
+			margin-top: 70px;
+		}
+		li#list2{
+			
+				margin-left: 20px;
+			list-style: none;
+
+		}
+
+		section#celebimages{
+				padding: 1px;
+			width:100%;
+			height: 220px;
+			float: left;
+			background-color:#993333;
+			margin-bottom: 40px;
+		}
+		section#celebimages:hover{
+
+		background-color:#33C33;
+
+		}
+
+		header
+		{
+			float:left;
+			height: 46px;
+			padding: px;	
+			width:100%;
+			margin-bottom: 0px;
+			background-color:#FF9933;
+			padding-bottom:50px
+
+		}
+		header:hover{
+
+			background-color: #0000FF;
+		}
+		aside#rightside{
+			float: right;
+			width: 350px;
+			margin-left: 0px;
+			margin-right: 40px;
+			background-color: #ccc;
+		}
+		bur6u9lb
+		aside#rightside:hover
+		{
+
+
+		}
+		.leftside li{
+
+			margin-bottom: 65px;
+			list-style: none;
+		}
+		.leftside a{
+			font-size: 20px;
+
+			text-decoration: none;
+			list-style: none;
+
+		}
+		.leftside a:hover
+		{
+		color: green;
+
+
+
+		}
+
+		div.leftside
+		{
+		border: solid;
+		margin-left: 40px;
+		border-radius: 25px;
+		width: 300px;
+			float: left ;
+			padding-left: 0px;
+			padding-right: 0px;
+			margin-right: 50px;
+			height: 750px;
+		}
+		p {
+
+		}
+			#nesteddivs{
+
+
+				height: 600px;
+			
+			}
+			#nesteddivs:hover{
+				background-color: #FFFF6;
+			}
+
+		h1#workoutmain{
+			font-size: 50px;
+			font-family: 'Nunito', sans-serif;
+			margin-top: 50px;
+		}
+		h1{
+			font-size: 20px;
+			
+			text-align: center;
+		}
+
+		}
+
+		ul#topss2 li{
+		margin-bottom: 50px;
+		list-style: none;
+		font-size: 20px;
+
+
+		}
+
+
+
+
+		.copyright{
+		 float: left;
+		 width: 400px;
+		 margin-left:220px;
+		}
+		div .ulbot ul{
+
+			margin:0;
+			padding: 0;
+		
+		}
+				div .ulbotend ul{
+
+			margin:0;
+			padding: 0;
+		
+		}
+
+		div .ulbot
+		{
+
+		    margin-right: px;
+		    padding: px ;
+		    float: left;
+		    width: 200px;
+		    
+		}
+		div .ulbotend{
+		width: px;
+		margin:0;
+		float:left;
+
+
+
+		}
+		  footer .ulbot ul li {
+		    padding: 8px 0;
+		    list-style: none;
+		    font-family: "Arial", sans-serif;
+		    font-weight: bold;
+		  }
+		    footer .ulbotend ul li
+		    	{
+		    padding: 8px 0;
+		    list-style: none;
+		    font-family: "Arial", sans-serif;
+		    font-weight: bold;
+		  }
+		  footer{
+		  	border-top: double 8px;
+		height: px;
+		width: %;
+
+
+		  }
+		  footer #botlinkwrap
+		  {
+
+		margin-left:;
+
+
+
+		  }
+		#foothead{
+		}
+
+		  
+		  	#rockman:hover 
+		  { opacity: 1; /*Reflection*/ -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, 
+		  	from(transparent), color-stop(.7, transparent), to(rgba(0,0,0,0.4))); 
+		  	/*Glow*/ -webkit-box-shadow: 0px 0px 20px rgba(255,255,255,0.8); -moz-box-shadow: 0px 0px 20px 
+		  	rgba(255,255,255,0.8); 
+		  	box-shadow: 0px 0px 20px rgba(255,255,255,0.8); }
+
+		  	#rockmanend:hover 
+		  { opacity: 1; /*Reflection*/ -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, 
+		  	from(transparent), color-stop(.7, transparent), to(rgba(0,0,0,0.4))); 
+		  	/*Glow*/ -webkit-box-shadow: 0px 0px 20px rgba(255,255,255,0.8); -moz-box-shadow: 0px 0px 20px 
+		  	rgba(255,255,255,0.8); 
+		  	box-shadow: 0px 0px 20px rgba(255,255,255,0.8); }

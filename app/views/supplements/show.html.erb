@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Description:</strong>
+  <%= @supplement.description %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @supplement.brand %>
+</p>
+
+<p>
+  <strong>Opinion:</strong>
+  <%= @supplement.opinion %>
+</p>
+
+<p>
+  <strong>Serving size:</strong>
+  <%= @supplement.serving_size %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @supplement.price %>
+</p>
+
+<%= link_to 'Edit', edit_supplement_path(@supplement) %> |
+<%= link_to 'Back', supplements_path %>

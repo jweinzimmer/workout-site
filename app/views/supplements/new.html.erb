@@ -1,0 +1,18 @@
+<h1>New supplement</h1>
+
+<%= render 'form' %>
+<!-- my-calorie-counter -->
+<!-- my-calorie-counter -->
+<form action="http://www.my-calorie-counter.com/Calorie_Counter.asp" method="get" id="frmMCCSearch">
+<p>
+Enter the food or activity to find:<br />
+<input type="text" id="txtMCCSearch" name="txtMCCSearch" size="40" value="" maxlength="70" />
+ 
+<input type="submit" value="Search" id="btnMCCSearch" name="btnMCCSearch" /><br />
+Powered By: my-calorie-counter.com - the webs Free <a href="http://www.my-calorie-counter.com">Calorie Counter</a>
+</p>
+</form>
+<!-- my-calorie-counter -->
+
+<!-- my-calorie-counter -->
+<%= link_to 'Back', supplements_path %>

@@ -1,0 +1,7 @@
+%h1= @plan.name
+
+
+%ul
+	- @plan.workouts.each do |f|
+		%li 
+			= f.details

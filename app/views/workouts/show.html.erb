@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+<%= image_tag @workout.photo.url(:original) %>
+<p>
+<center><%= link_to 'My Workout PDF Complete Version', @workout.photo.url %></center>
+</p>
+<p>
+<strong>Created At</strong>
+<%= @workout.created_at.to_s(:long) %>
+</p>
+<p>
+  <strong>Details:</strong>
+  <%= @workout.details %>
+</p>
+<p>
+<strong>Sets</strong>
+<%= @workout.sets %>
+</p>
+<p>
+<strong>Reps</strong>
+<%= @workout.reps%>
+</p>
+<p>
+  <strong>Days performed:</strong>
+  <%= @workout.days_performed %>
+</p>
+
+<p>
+  <strong>Duration of workout:</strong>
+  <%= @workout.duration_of_workout %>
+  Minutes
+</p>
+
+<%= link_to 'Edit', edit_workout_path(@workout) %> |
+<%= link_to 'Back', workouts_path %>

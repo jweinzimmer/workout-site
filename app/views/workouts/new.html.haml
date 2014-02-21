@@ -1,0 +1,50 @@
+%h1 Add Workout
+.large-8.columns
+  = form_for @workout, :html => {:multipart => true} do |f|
+    - if @workout.errors.any?
+      #error_explanation
+        %h2
+          = pluralize(@workout.errors.count, "error")
+          prohibited this workout from being saved:
+        %ul
+          - @workout.errors.full_messages.each do |msg|
+            %li= msg
+    .field
+      = f.label :details
+      %br
+      = f.text_field :details
+    .field
+      = f.label :days_performed
+      %br
+      = f.text_field :days_performed
+
+    / .field.smaller
+    /   = f.label :reps
+    /   x
+    /   = f.label :sets
+    /   %br
+    /   = f.number_field :reps
+
+    /   = f.number_field :sets
+    .field
+      = f.label :weight
+      %br
+      = f.text_field :weight
+    .field
+      = f.label :duration_of_workout
+      %br
+      = f.number_field :duration_of_workout
+    .field
+      = f.label :plan_id, "Plan"
+      = f.collection_select( :plan_id, current_user.plans.all, :id, :name)
+
+    %p
+      = f.file_field :photo
+    %p
+      = f.label :remote_image_url, "or image URL"
+      %br
+       
+    .actions
+      = f.submit
+
+  = link_to 'Back', workouts_path

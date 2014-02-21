@@ -1,0 +1,29 @@
+= form_for(@workout) do |f|
+  - if @workout.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@workout.errors.count, "error")
+        prohibited this workout from being saved:
+      %ul
+        - @workout.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :details
+    %br/
+    = f.text_field :details
+  .field
+    = f.label :days_performed
+    %br/
+    = f.text_field :days_performed
+  .field
+    = f.label :duration_of_workout
+    %br/
+    = f.number_field :duration_of_workout
+  .field
+    = f.file_field :photo
+  .field
+    = f.label :remote_image_url, "or image URL"
+    %br/
+    = f.text_field :remote_image_url 
+  .actions
+    = f.submit

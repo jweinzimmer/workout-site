@@ -1,0 +1,36 @@
+<%= simple_form_for(@supplement) do |f| %>
+  <% if @supplement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@supplement.errors.count, "error") %> prohibited this supplement from being saved:</h2>
+
+      <ul>
+      <% @supplement.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <div class="nested"> 
+  <div class="field">
+  <%= f.select :brand, options_for_select(%w[GNC Publix Vitamin\ Shop])%>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :opinion %><br>
+    <%= f.text_field :opinion %>
+  </div>
+  <div class="field">
+    <%= f.label :serving_size %><br>
+    <%= f.number_field :serving_size %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.number_field :price %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+</div>
+<% end %>

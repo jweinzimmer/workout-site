@@ -1,0 +1,73 @@
+<h1>Listing workouts</h1>
+<script type="text/javascript">
+  $(function () {
+    new Highcharts.Chart({
+      chart: { renderTo: "orders_chart"
+      },
+      title: { 
+        text: "Workout Progress"
+      },
+      xAxis:{
+
+        type: "datetime"
+      },
+      plotOptions: {
+            series: {
+                //pointStart: Date.UTC(2014, 1, 21),
+                //pointInterval: 24 * 3600 * 1000 // one day
+            }
+      },
+      yAxis:{
+        title: {
+          type: "integer",
+          text: "Weight(lbs)"
+          }
+      },
+      series:[{
+      pointInterval: <%= 1.day * 1000 %>,
+      pointStart: <%= 3.weeks.ago.at_midnight.to_i * 1000 %>,
+      data: <%= (3.weeks.ago.to_date...Date.today).map { |date| Workout.total_on(date).to_f}.inspect %>
+
+      }]
+    });  
+  });
+</script>
+<div id="orders_chart">
+
+
+
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>Created At</th>
+      <th>Details</th>
+      <th>Days performed</th>
+      <th>Duration of workout</th>
+      <th>File</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @workouts.each do |workout| %>
+      <tr>
+        <td><%= workout.created_at.to_s(:long) %></td>
+        <td><%= workout.details %></td>
+        <td><%= workout.days_performed %></td>
+        <td><%= workout.duration_of_workout %></td>
+        <td><%= link_to workout.photo, workout.photo.url %></td>
+        <td><%= link_to 'Show', workout %></td>
+        <td><%= link_to 'Edit', edit_workout_path(workout) %></td>
+        <td><%= link_to 'Destroy', workout, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+   
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Workout', new_workout_path %>
