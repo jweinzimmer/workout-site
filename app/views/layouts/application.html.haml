@@ -3,7 +3,7 @@
   %head
     %title WorkoutWebsite
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "jquery-1.4.2.min", "data-turbolinks-track", "highcharts", "highcharts-more" => true
+    = javascript_include_tag :defaults, :cache, "application", "jquery-1.4.2.min", "data-turbolinks-track", "highcharts", "highcharts-more" => true
     = csrf_meta_tags
   %body
     %nav.top-bar{"data-topbar" => ""}
@@ -51,6 +51,7 @@
           %li= link_to "Add Workout", new_workout_path
           %li=link_to 'Enter Your Stats', new_stat_path
           %li=link_to 'Plans', plans_path
+          %li=link_to "New Plan", new_plan_path
         %li#botlist
           %a{href: "#"} Calorie/Carb counter 
     %p.notice= notice

@@ -4,28 +4,30 @@ class WorkoutsController < ApplicationController
   # GET /workouts
   # GET /workouts.json
   def index
-    @workouts = Workout.all
+    @workouts = current_user.workouts.all
   end
 
   # GET /workouts/1
   # GET /workouts/1.json
   def show
+    @workout = Workout.find(params[:id])
   end
 
   # GET /workouts/new
   def new
     @workout = Workout.new
+    3.times {@workout.workout_sets.build}
+   # @workout.workout_sets.build if @workout.workoutsets.empty?
   end
 
   # GET /workouts/1/edit
   def edit
+    @workout = Workout.find(params[:id])
   end
-
   # POST /workouts
   # POST /workouts.json
   def create
     @workout = current_user.workouts.new(workout_params)
-
     respond_to do |format|
       if @workout.save
         format.html { redirect_to @workout, notice: 'Workout was successfully created.' }
@@ -40,6 +42,7 @@ class WorkoutsController < ApplicationController
   # PATCH/PUT /workouts/1
   # PATCH/PUT /workouts/1.json
   def update
+    
     respond_to do |format|
       if @workout.update(workout_params)
         format.html { redirect_to @workout, notice: 'Workout was successfully updated.' }
@@ -69,6 +72,6 @@ class WorkoutsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def workout_params
-      params.require(:workout).permit(:details, :days_performed, :duration_of_workout, :photo, :user_id, :plan_id, :sets, :reps)
+      params.require(:workout).permit(:name, :details, :days_performed, :duration_of_workout, :photo, :user_id, :plan_id, :workout_sets_attributes => [:weight, :reps, :id, :_destroy, :workout_id])
     end
 end

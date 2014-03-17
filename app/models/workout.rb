@@ -10,10 +10,17 @@ class Workout < ActiveRecord::Base
 # validates_attachment_presence :photo
 validates_attachment_size :photo, :less_than => 5.megabytes
 validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png' , 'application/pdf']
-belongs_to :user
-belongs_to :plans
+#belongs_to :user
+has_one :gymweight, dependent: :destroy
+#belongs_to :plan
+#belongs_to :gymweights, :dependent => :destroy
+has_many :workout_sets, :dependent => :destroy
+accepts_nested_attributes_for :workout_sets, :reject_if => lambda { |a| a[:reps].blank? }, :allow_destroy => true
+#lambda allows user to enter 2 sets instead of 3 and it wont save 3rd field blank
 
 def self.total_on(date)
 	where("date(created_at) = ?", date).sum(:weight)
-	end
 end
+
+end
+

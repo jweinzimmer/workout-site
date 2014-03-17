@@ -1,11 +1,21 @@
 WorkoutWebsite::Application.routes.draw do
+  get "workout_sets/index"
+  get "workout_sets/new"
+  get "workout_sets/create"
+  get "workout_sets/show"
+  get "workout_sets/update"
+  get "workout_sets/destroy"
   resources :plans
   devise_for :users do
     get "sign_out" => 'devise/sessions#destroy'
   end
 
   resources :stats
-  resources :workouts
+  resources :workouts do
+    member do
+      get 'workout_sets'
+    end
+  end
 
   resources :supplements
 

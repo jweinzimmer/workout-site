@@ -17,8 +17,9 @@ class User < ActiveRecord::Base
     first_name + " " + last_name
    end
 
-   def self.plans
-    plans.where(user_id: :id)
+   def workout_sets
+    self.workouts.sets
    end
+
 
 end

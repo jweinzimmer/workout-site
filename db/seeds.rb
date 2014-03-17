@@ -5,3 +5,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Gymweight.create(
+	:name => 'Bench'
+
+
+	)
+Workout.create([
+	{:details => "Weights"},
+	{:details => "Swim"},
+	{:details => 'Run'},
+	{:details => 'Other'},
+	{:details => 'Bike'}
+]
+
+	)

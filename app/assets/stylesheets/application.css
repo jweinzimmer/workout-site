@@ -16,8 +16,28 @@
 	float: left;
 	margin-left: 300px;
 }*/
+.huge{
 
+	font-size: 30px;
+	margin-left: 70px;
+}
+.huge2{
 
+	font-size: 30px;
+	margin-left: 35px;
+}
+#repsme{
+	margin-right: 200px;
+}
+#weightme{
+
+	margin-left: 600px;
+	margin-bottom: 80000;
+}
+.add.add_fields{
+
+	margin-right: 300px;
+}
 #orders_chart{
 	margin-left: 200px;
 	display: inline-block;
@@ -45,15 +65,36 @@ margin-top: 50px;
 	float: left;
 }
 .field{
-
-width: 500px;
-
-
+	width: 500px;
+	margin-right: 0px;
+	display: inline-block;
 }
 
+.add a{
+	margin-top: 10px;
+	margin-left: 60px;
+}
+.set-input{
+	width: 300px;
+	margin-right: 0px;
+}
+.add{
+	display: inline-block;
+	font-size: 40px;
+	font-weight: bold;
+}
 .nested{
 	margin-left: 280px;
 	float: left;
+}
+.setbar{
+	width: 100px;
+}
+.sign{
+	display: inline-block;
+}
+.seth{
+font-size: 20px;
 }
 
 #img{height: 1000px;}
