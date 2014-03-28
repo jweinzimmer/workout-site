@@ -1,0 +1,8 @@
+<fieldset>
+  <%= f.label :reps, "Reps" %>
+  <%= f.text_field :reps %>
+  <%= f.label :weight, "weight" %>
+  <%= f.text_field :weight %>
+  <%= f.hidden_field :_destroy %>
+  <%= link_to "remove", '#', class: "remove_fields" %>
+</fieldset>

@@ -9,7 +9,7 @@ class PlansController < ApplicationController
 
   def new
     @plan = Plan.new
-    1.times {@plan.workouts.build}
+    #1.times {@plan.workouts.build}
     #2.times {@plan.workouts.workout_sets.build}
   end
 def edit
@@ -48,6 +48,6 @@ end
   private
 
   def plan_params
-    params.require(:plan).permit(:name, :workouts_attributes => [:duration_of_workout, :details, :id, :_destroy, :plan_id, :days_performed])
+    params.require(:plan).permit(:photo, :name, :days_performed,  :workouts_attributes => [:run_workout_type, :swim_workout_type, :bike_workout_type, :other_workout_type, :weights_workout_type, :duration_of_workout, :details, :id, :_destroy, :plan_id, :gymweight_attributes => [:id, :name,],  :workout_sets_attributes => [:id, :reps, :weight]])
   end
 end

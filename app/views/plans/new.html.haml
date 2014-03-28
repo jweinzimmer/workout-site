@@ -1,7 +1,5 @@
 %h1 New Plan
 = form_for @plan do |f|
-	.fieldm
-		= link_to_add_fields "Add Workout", f, :workouts
 	.field
 		=f.label :name, "Plan Name"
 		=f.text_field :name
@@ -9,13 +7,12 @@
 	.field
 		= f.label :days_performed
 		= f.text_field :days_performed
-	
 	.fields
 		= f.fields_for :workouts do |f|		
 			.fields
 				.field
 					= f.label :details, "Workout Type"
-					= f.text_field :details
+					= f.select :details, all_workouts
 				%br
 				.field
 					= f.label :duration_of_workout
@@ -31,6 +28,11 @@
 						.field.setbar
 							= f.label :weight
 							= f.number_field :weight
-		
+	.field
+		= f.file_field :photo
+		= f.label :remote_image_url, "or image URL"					
+	.fieldm
+		= link_to_add_fields "Add Workout", f, :workouts	
 	.action
 		=f.submit
+	%li= link_to "Add Workout", new_workout_path

@@ -1,4 +1,6 @@
 <h1>Listing workouts</h1>
+<div id="orders_chart">
+</div>
 <script type="text/javascript">
   $(function () {
     new Highcharts.Chart({
@@ -32,11 +34,10 @@
     });  
   });
 </script>
-<div id="orders_chart">
 
 
 
-</div>
+
 <table>
   <thead>
     <tr>
@@ -56,7 +57,6 @@
       <tr>
         <td><%= workout.created_at.to_s(:long) %></td>
         <td><%= workout.details %></td>
-        <td><%= workout.days_performed %></td>
         <td><%= workout.duration_of_workout %></td>
         <td><%= link_to workout.photo, workout.photo.url %></td>
         <td><%= link_to 'Show', workout %></td>

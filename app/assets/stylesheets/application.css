@@ -65,9 +65,21 @@ margin-top: 50px;
 	float: left;
 }
 .field{
-	width: 500px;
+	width: 400px;
+
+	
+}
+.fiel{
+width: 400px;
+}
+.fieldsx{
+	width: 400px;
 	margin-right: 0px;
 	display: inline-block;
+	
+}
+.nestedstuff{
+	margin-bottom: 30px;
 }
 
 .add a{

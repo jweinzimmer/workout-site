@@ -7,15 +7,23 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Gymweight.create(
 	:name => 'Bench'
-
-
 	)
+
 Workout.create([
 	{:details => "Weights"},
 	{:details => "Swim"},
 	{:details => 'Run'},
 	{:details => 'Other'},
-	{:details => 'Bike'}
-]
+	{:details => 'Bike'},
+	{:weight_details => "Squat"},
+	{:weight_details => "Bench"},
+	{:weight_details => 'Dead Lift'},
+	{:weight_details => 'Upright Row'},
+	{:weight_details => 'Military Press'},
+	{:weight_details => 'Lat Pullovers'}
 
-	)
+])
+
+# User.create(
+
+# 	)

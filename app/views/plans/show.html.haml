@@ -1,9 +1,31 @@
-%h1  
+%h1
 	= @plan.name
-%ul
-	- @plan.workouts.each do |f|
-		%li 
-			= f.details
-			= f.duration_of_workout
-			= f.workout_sets.each
+	%br 
+	Days Performed: 
+	= @plan.days_performed
+	%br
+	%strong= link_to "Start Adding Workouts to Your Plan", new_workout_path
+	%br
+	- if !@plan.photo_file_name.empty? && @plan.photo_content_type == 'image/jpeg' || @plan.photo_content_type == 'image/png'
+		= image_tag @plan.photo.url(:original)
+	- if !@plan.photo_file_name.empty? && @plan.photo_content_type == 'application/pdf'	
+		= link_to 'My Workout PDF Complete Version', @plan.photo.url
+.row
+	%ul.large-9.columns
+		- @plan.workouts.each do |f|
+			%li
+				= f.details
+				%br
+				= f.gymweight ? f.gymweight.name : "Nothing Here"
+				%br
+				= f.duration_of_workout
+				Minutes
+				%br
+			- if !f.workout_sets.empty?
+				%h3 Sets
+				- f.workout_sets.each do |f| 
+					= f.reps
+					= f.weight
+					%br
+
 

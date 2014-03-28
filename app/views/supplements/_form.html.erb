@@ -9,28 +9,27 @@
       <% end %>
       </ul>
     </div>
+  <% end %> 
+  <div class="field">
+    <%= f.select :brand, options_for_select(%w[GNC Publix Vitamin\ Shop])%>
+    <div class="field">
+      <%= f.label :description %><br>
+      <%= f.text_field :description %>
+    </div>
+    <div class="field">
+      <%= f.label :opinion %><br>
+      <%= f.text_field :opinion %>
+    </div>
+    <div class="field">
+      <%= f.label :serving_size %><br>
+      <%= f.number_field :serving_size %>
+    </div>
+    <div class="field">
+      <%= f.label :price %><br>
+      <%= f.number_field :price %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  </div>
   <% end %>
- <div class="nested"> 
-  <div class="field">
-  <%= f.select :brand, options_for_select(%w[GNC Publix Vitamin\ Shop])%>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :opinion %><br>
-    <%= f.text_field :opinion %>
-  </div>
-  <div class="field">
-    <%= f.label :serving_size %><br>
-    <%= f.number_field :serving_size %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.number_field :price %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-</div>
-<% end %>

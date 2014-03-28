@@ -10,7 +10,7 @@ gem 'simple_form'
 gem 'haml'
 
 gem 'devise'
-gem 'foundation'
+gem 'foundation-rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -26,6 +26,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
+gem 'jquery-turbolinks'
 gem 'jquery-rails'
 group :development do
 gem "better_errors"

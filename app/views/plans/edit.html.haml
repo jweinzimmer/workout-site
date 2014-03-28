@@ -1,0 +1,33 @@
+%h1 Edit Plan
+= form_for @plan do |f|
+	.field
+		=f.label :name
+		=f.text_field :name
+	.field
+		= link_to_add_fields "Add Workout", f, :workouts
+	= f.fields_for :workouts do |f|		
+		.fields
+			.field
+				= f.label :details
+				= f.text_field :details
+			%br
+			.field
+				= f.label :days_performed
+				= f.text_field :days_performed
+			%br
+			.field
+				= f.label :duration_of_workout
+				= f.text_field :duration_of_workout
+	
+		= f.fields_for :workout_sets do |f|
+			.fields
+				.field
+					= f.label :reps
+					= f.number_field :reps
+				.field
+					= f.label :weight
+					= f.number_field :weight
+		.field
+			= link_to_add_fields "+", f, :workout_sets
+	.action
+		=f.submit

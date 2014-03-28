@@ -1,46 +1,55 @@
 .large-8.columns
   = form_for @workout, :html => {:multipart => true} do |f|
     - if @workout.errors.any?
-      #error_explanation
+      #error_explanation 
         %h2
           = pluralize(@workout.errors.count, "error")
           prohibited this workout from being saved:
         %ul
           - @workout.errors.full_messages.each do |msg|
             %li= msg
-    .field
-      = f.label :details, "CLICK ON ME"
-      = f.collection_select( :details, Workout.all, :details, :details)
-      = link_to "LINKKKK", workout_sets_workout_url(:workout_id)
+    .nestedstuff
+      .field
+        = f.label :plan_id, "Plan"
+        = f.collection_select( :plan_id, current_user.plans.all, :id, :name)
+      .field
+        = f.label :details
+        / = f.select(:request, "id", Workout.find(:all).collect { |c| [c.name, c.id] }))
+        = f.select :details, all_workouts
+      .field.swim-optional
+        = f.label :run_workout_type, "Swim Type"
+        = f.select :run_workout_type, ["Back Stroke", "Breast Stroke", "Butterfly", "Free Stroke", "Side Stroke", "Mixed"]
+      .field.bike-optional
+        = f.label :run_workout_type, "Bike Type"
+        = f.select :run_workout_type, ["Easy", "Hill", "Interval", "Long", "Tempo", "Race", "Fartlek"]
+      .field.run-optional
+        = f.label :run_workout_type, "Run Type"
+        = f.select :run_workout_type, ["Easy", "Hill", "Interval", "Long", "Tempo", "Race", "Fartlek"]
+      .field.weight-optional
+        = f.label :weight_details, "Weight Type"
+        = f.select :weight_details, ["Bench", "Squat", "Dead Lift", "Upright Row", "Lat pulldowns"]
+    .huge Sets
+    .optional-fields        
+      = f.fields_for :workout_sets do |f|
+        .fields
+          %h2.seth
+          .fieldsx.setbar
+            = f.label :reps
+            = f.number_field :reps
+          x
+          .setbar.fieldsx
+            = f.label :weight
+            = f.number_field :weight
+          .field
+            = f.hidden_field :_destroy
+            = link_to_remove_fields "remove", f
+      .add.huge2
+        = link_to_add_fields "+", f, :workout_sets
       %br
-      .addfields.huge Sets
-    = f.fields_for :workout_sets do |f|
-      .fields
-        %h2.seth
-        .field.setbar
-          = f.label :reps
-          = f.number_field :reps
-        x
-        .setbar.field
-          = f.label :weight
-          = f.number_field :weight
-        .field
-          = f.hidden_field :_destroy
-          = link_to_remove_fields "remove", f
-    .add.huge2
-      = link_to_add_fields "+", f, :workout_sets
-    %br
-    .field
-      = f.label :weights_workout_type_id, "Plan"
-      = f.collection_select( :weights_workout_type_id, Gymweight.all, :id, :name) 
     .field
       = f.label :duration_of_workout
       %br
       = f.number_field :duration_of_workout
-    .field
-      = f.label :plan_id, "Plan"
-      = f.collection_select( :plan_id, current_user.plans.all, :id, :name)
-
     %p
       = f.file_field :photo
     %p

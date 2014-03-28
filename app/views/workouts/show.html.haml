@@ -1,0 +1,28 @@
+%p#notice= notice
+%p
+  = image_tag @workout.photo.url(:original)
+%p
+%center= link_to 'My Workout PDF Complete Version', @workout.photo.url
+%p
+  %strong Created At
+  = @workout.created_at.to_s(:long)
+%p
+  %strong Details:
+  = @workout.details
+%p
+  %strong#repsme Reps
+  %strong Weight
+%ol
+%ul
+  - @workout.workout_sets.each do |builder|
+    %li
+      = builder.reps
+      = builder.weight
+
+%p
+  %strong Duration of workout:
+  = @workout.duration_of_workout
+  Minutes
+= link_to 'Edit', edit_workout_path(@workout)
+|
+\#{link_to 'Back', workouts_path}
