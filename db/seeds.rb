@@ -10,17 +10,12 @@ Gymweight.create(
 	)
 
 Workout.create([
+	{:details => ""},
 	{:details => "Weights"},
 	{:details => "Swim"},
 	{:details => 'Run'},
 	{:details => 'Other'},
-	{:details => 'Bike'},
-	{:weight_details => "Squat"},
-	{:weight_details => "Bench"},
-	{:weight_details => 'Dead Lift'},
-	{:weight_details => 'Upright Row'},
-	{:weight_details => 'Military Press'},
-	{:weight_details => 'Lat Pullovers'}
+	{:details => 'Bike'}
 
 ])
 

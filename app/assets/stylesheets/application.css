@@ -16,6 +16,17 @@
 	float: left;
 	margin-left: 300px;
 }*/
+.hidden{
+	display: none;
+}
+.nestedstuff{
+	display: inline-block;
+}
+.fieldsx{
+	width: 400px;
+	display: inline-block;
+	
+}
 .huge{
 
 	font-size: 30px;
@@ -64,17 +75,22 @@ margin-top: 50px;
 .float{
 	float: left;
 }
+.planwork{
+	display: inline-block;
+	width: 400px;
+}
 .field{
 	width: 400px;
-
+	
 	
 }
+
 .fiel{
 width: 400px;
 }
-.fieldsx{
+.modfield{
 	width: 400px;
-	margin-right: 0px;
+
 	display: inline-block;
 	
 }

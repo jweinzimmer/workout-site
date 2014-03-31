@@ -6,9 +6,9 @@
 	%br
 	%strong= link_to "Start Adding Workouts to Your Plan", new_workout_path
 	%br
-	- if !@plan.photo_file_name.empty? && @plan.photo_content_type == 'image/jpeg' || @plan.photo_content_type == 'image/png'
+	- if !@plan.photo_file_name.nil? && @plan.photo_content_type == 'image/jpeg' || @plan.photo_content_type == 'image/png'
 		= image_tag @plan.photo.url(:original)
-	- if !@plan.photo_file_name.empty? && @plan.photo_content_type == 'application/pdf'	
+	- if !@plan.photo_file_name.nil? && @plan.photo_content_type == 'application/pdf'	
 		= link_to 'My Workout PDF Complete Version', @plan.photo.url
 .row
 	%ul.large-9.columns
@@ -16,7 +16,11 @@
 			%li
 				= f.details
 				%br
-				= f.gymweight ? f.gymweight.name : "Nothing Here"
+				= f.weights_workout_type
+				= f.run_workout_type
+				= f.bike_workout_type
+				= f.swim_workout_type
+				= f.other_workout_type
 				%br
 				= f.duration_of_workout
 				Minutes

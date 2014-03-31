@@ -31,6 +31,7 @@ $(document).ready(function() {
 			$('.run-optional').show();
 			$('.bike-optional').hide();
 			$('.swim-optional').hide();
+			$('.hidden').hide();
 		}
 		else if(value == 'Bike'){
 			$('.optional-fields').hide();
@@ -38,7 +39,7 @@ $(document).ready(function() {
 			$('.run-optional').hide();
 			$('.bike-optional').show();
 			$('.swim-optional').hide();
-
+			$('.hidden').hide();
 
 		}
 		else if(value == 'Swim')
@@ -48,6 +49,7 @@ $(document).ready(function() {
 			$('.run-optional').hide();
 			$('.bike-optional').hide();
 			$('.swim-optional').show();
+			$('.hidden').hide();
 		}
 		
 		else if(value == 'Weights'){
@@ -56,16 +58,25 @@ $(document).ready(function() {
 			$('.run-optional').hide();
 			$('.bike-optional').hide();
 			$('.swim-optional').hide();
+			$('.hidden').toggle('hidden')
 			
 		}
+		else if(value == ''){
+			$('.optional-fields').hide();
+			$('.weight-optional').hide();
+			$('.run-optional').hide();
+			$('.bike-optional').hide();
+			$('.swim-optional').hide();
+			$('.hidden').hide();
+			}
 		
 		// console.dir(value);
 	});
 	$('#workout_details').ready(function(){
 		var value = $('#workout_details').val();
-			if(value == 'Weights'){
-			$('.optional-fields').show();
-			$('.weight-optional').show();
+			if(value == ''){
+			$('.optional-fields').hide();
+			$('.weight-optional').hide();
 			$('.run-optional').hide();
 			$('.bike-optional').hide();
 			$('.swim-optional').hide();

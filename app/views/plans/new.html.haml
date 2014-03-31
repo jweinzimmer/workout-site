@@ -1,15 +1,15 @@
 %h1 New Plan
 = form_for @plan do |f|
-	.field
+	.planwork
 		=f.label :name, "Plan Name"
 		=f.text_field :name
 	%br
-	.field
+	.planwork
 		= f.label :days_performed
 		= f.text_field :days_performed
 	.fields
 		= f.fields_for :workouts do |f|		
-			.fields
+			.nestedstuff
 				.field
 					= f.label :details, "Workout Type"
 					= f.select :details, all_workouts
@@ -28,7 +28,7 @@
 						.field.setbar
 							= f.label :weight
 							= f.number_field :weight
-	.field
+	.planwork
 		= f.file_field :photo
 		= f.label :remote_image_url, "or image URL"					
 	.fieldm
