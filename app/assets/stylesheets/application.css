@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require_tree .
+
  */
 /*.form-inputs{
 	width: 300px;
@@ -21,6 +22,7 @@
 }
 .nestedstuff{
 	display: inline-block;
+	width: 250px;
 }
 .fieldsx{
 	width: 400px;

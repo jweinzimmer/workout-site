@@ -28,7 +28,9 @@ end
       end
     end
   end
-
+  def uploaded_plans
+    @plans = Plan.all
+  end
   def update
     @plan = Plan.find(params[:id]) 
     respond_to do |format|
