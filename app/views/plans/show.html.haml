@@ -11,25 +11,37 @@
 	- if !@plan.photo_file_name.nil? && @plan.photo_content_type == 'application/pdf'	
 		= link_to 'My Workout PDF Complete Version', @plan.photo.url
 .row
-	%ul.large-9.columns
+	%ul.small-8.columns
 		- @plan.workouts.each do |f|
-			%li
+			%li.panel.callout.radius
+
+				%strong
+					Activity
 				= f.details
 				%br
+				%strong 
+					Workout Type
 				= f.weights_workout_type
 				= f.run_workout_type
 				= f.bike_workout_type
 				= f.swim_workout_type
 				= f.other_workout_type
 				%br
+				%strong
+					Duration of Workout
 				= f.duration_of_workout
 				Minutes
 				%br
-			- if !f.workout_sets.empty?
-				%h3 Sets
-				- f.workout_sets.each do |f| 
-					= f.reps
-					= f.weight
+				- if f.details != "Weights"
+					%br
+				- if !f.workout_sets.empty?
+					%strong Sets
+					- f.workout_sets.each do |f| 
+						= f.reps
+						= f.weight
+				- if f.details == "Weights"
+					%br
+					%br
 					%br
 
 

@@ -30,7 +30,7 @@
       .field.weight-optional
         = f.label :weights_workout_type, "Weight Type"
         = f.select :weights_workout_type, ["", "Bench", "Squat", "Dead Lift", "Upright Row", "Lat pulldowns"]
-      .hidden.huge
+      %strong.hidden
         Sets
       .optional-fields        
         = f.fields_for :workout_sets do |f|

@@ -10,18 +10,22 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
 //= require jquery
 //= require jquery_ujs
 //= require underscore
 //= require_tree .
-
+//= require fullcalendar
 
 
 $(document).ready(function() {
   $('#request_product_id').change(function() {
     $.ajax({ url: '/products/' + this.value + '/form_partial' });
    });
-
+  // $('#calendar').fullCalendar({
+  //       weekends: false
+  //   })
+ if ('#underlinespecial')
   $('#workout_details').change(function(){
 		var value = $('#workout_details').val();	
 		

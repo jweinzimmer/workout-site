@@ -8,8 +8,11 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ 
  *= require_self
+ *= require fullcalendar
  *= require_tree .
+
 
  */
 /*.form-inputs{
@@ -17,8 +20,26 @@
 	float: left;
 	margin-left: 300px;
 }*/
+.panel.radius{
+	
+}'
+#showinfo{
+
+	width: 300px;
+}
+
+#underline{
+	border-bottom: 2px solid;
+}
+#showinfo{
+	width: 70%;
+	display: inline-block;
+}
 .hidden{
 	display: none;
+}
+.leftside.columns{
+	height: 1000px;
 }
 .nestedstuff{
 	display: inline-block;
