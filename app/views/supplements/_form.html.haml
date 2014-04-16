@@ -7,8 +7,10 @@
       %ul
         - @supplement.errors.full_messages.each do |msg|
           %li= msg
-  .field.nestedstuff
-    = f.select :brand, options_for_select(%w[GNC Publix Vitamin\ Shop])
+  .small-8.columns.panel
+    %h1 Add Supplement
+    .field
+      = f.select :brand, options_for_select(%w[GNC Publix Vitamin\ Shop])
     .field
       = f.label :description
       %br/
@@ -25,17 +27,19 @@
       = f.label :price
       %br/
       = f.number_field :price
-    %form#frmMCCSearch{action: "http://www.my-calorie-counter.com/Calorie_Counter.asp", method: "get"}
+    .actions
+      =  f.submit
+.small-8.columns.panel
+  %form#frmMCCSearch{action: "http://www.my-calorie-counter.com/Calorie_Counter.asp", method: "get"}
     %p
-    .field
-      Enter the food or activity to find:
-      %br/
-      %input#txtMCCSearch{maxlength: "70", name: "txtMCCSearch", size: "40", type: "text", value: ""}/
-      %input#btnMCCSearch{name: "btnMCCSearch", type: "submit", value: "Search"}/
-      %br/
-      Powered By: my-calorie-counter.com - the webs Free
-      %a{href: "http://www.my-calorie-counter.com"} Calorie Counter
-      .actions
-        = f.submit
+      .field
+        Enter the food or activity to find:
+        %br/
+        %input#txtMCCSearch{maxlength: "70", name: "txtMCCSearch", size: "40", type: "text", value: ""}/
+        %input#btnMCCSearch{name: "btnMCCSearch", type: "submit", value: "Search"}/
+        %br/
+        Powered By: my-calorie-counter.com - the webs Free
+        %a{href: "http://www.my-calorie-counter.com"} Calorie Counter
+      
   / my-calorie-counter
-= link_to 'Back', supplements_path
+  /= link_to 'Back', supplements_path

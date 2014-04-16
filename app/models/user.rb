@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :workouts
   has_many :supplements
   has_many :plans
+  has_many :uploadedplans
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 

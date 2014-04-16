@@ -1,3 +1,10 @@
-- @plans.each do |f|
+- @uploadedplans.each do |f|
 	%div
 		= image_tag f.photo.url(:original)
+		%dl.tabs.pill
+			%dd.active
+				%a{href: "#pillTab1"} Pill Tab 1
+			%dd
+				%a{href: "#pillTab2"} Pill Tab 2
+			%dd.hide-for-small
+				%a{href: "#pillTab3"} Pill Tab 3

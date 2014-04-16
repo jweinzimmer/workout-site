@@ -3,15 +3,24 @@
 <table>
   <thead>
     <tr>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>BMI</th>
+      <th>Fat %</th>
+      <th>Weight</th>
+      <th>Height</th>
+      <th>Age</th>
+      <th>Logged at</th>
+      <th>Goal Weight</th>
     </tr>
   </thead>
 
   <tbody>
     <% @stats.each do |stat| %>
       <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td><%= link_to 'Show', stat %></td>
         <td><%= link_to 'Edit', edit_stat_path(stat) %></td>
         <td><%= link_to 'Destroy', stat, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -29,7 +29,12 @@ end
     end
   end
   def uploaded_plans
-    @plans = Plan.all
+    @uploadplans = Uploadedplan.all
+  end
+  def new_uploaded_plans
+
+    @uploadplan = Uploadedplan.new
+
   end
   def update
     @plan = Plan.find(params[:id]) 

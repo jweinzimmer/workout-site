@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140324182443) do
+ActiveRecord::Schema.define(version: 20140409165153) do
 
   create_table "gymweights", force: true do |t|
     t.string   "weights_workout_type"
@@ -52,6 +52,18 @@ ActiveRecord::Schema.define(version: 20140324182443) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+  end
+
+  create_table "uploadedplans", force: true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.string   "days_performed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "users", force: true do |t|

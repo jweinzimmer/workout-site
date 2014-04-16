@@ -11,8 +11,10 @@
 // about supported directives.
 //
 
+
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
 //= require underscore
 //= require_tree .
 //= require fullcalendar
@@ -22,9 +24,16 @@ $(document).ready(function() {
   $('#request_product_id').change(function() {
     $.ajax({ url: '/products/' + this.value + '/form_partial' });
    });
-  // $('#calendar').fullCalendar({
-  //       weekends: false
-  //   })
+  /* initialize the external events
+		-----------------------------------------------------------------*/
+	$(function (){
+        $('#stat_created_at').datepicker();
+});
+		
+		
+		
+
+
  if ('#underlinespecial')
   $('#workout_details').change(function(){
 		var value = $('#workout_details').val();	

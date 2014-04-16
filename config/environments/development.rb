@@ -6,7 +6,7 @@ WorkoutWebsite::Application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
   config.assets.enabled = true
-  config.assets.precompile += %W(fullcalendar.js)
+  #config.assets.precompile += %W(fullcalendar.js)
   #config.serve_static_assets = false
   # Do not eager load code on boot.
   config.eager_load = false

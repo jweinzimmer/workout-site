@@ -17,6 +17,7 @@ class SupplementsController < ApplicationController
   # GET /supplements/new
   def new
     @supplement = Supplement.new
+    1.times {current_user.supplements.build}
     @roles = "GNC"
   end
 
