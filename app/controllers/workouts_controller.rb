@@ -27,7 +27,7 @@ class WorkoutsController < ApplicationController
   # GET /workouts/new
   def new
     @workout = Workout.new
-    3.times {@workout.workout_sets.build}
+    1.times {@workout.workout_sets.build}
     @workout.build_gymweight
    # @workout.workout_sets.build if @workout.workoutsets.empty?
   end

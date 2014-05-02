@@ -15,8 +15,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.all
-//= require underscore
 //= require_tree .
+//= require underscore
 //= require fullcalendar
 
 
@@ -28,6 +28,8 @@ $(document).ready(function() {
 		-----------------------------------------------------------------*/
 	$(function (){
         $('#stat_created_at').datepicker();
+        $('#plan_start_date').datepicker();
+        $('#plan_end_date').datepicker();
 });
 		
 		
@@ -106,6 +108,7 @@ $(document).ready(function() {
 			$('#plan_workouts_attributes_0_details').hide();
 		}
 		});
+	// $(function(){ $(document).foundation(); });
 });
 
 

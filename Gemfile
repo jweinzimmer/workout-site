@@ -10,12 +10,12 @@ gem 'simple_form'
 gem 'haml'
 
 gem 'devise'
-gem 'foundation-rails'
+# gem 'foundation-rails'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+# gem 'sass-rails', '~> 4.0.0'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
-
+gem 'foundation-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 gem 'highcharts-rails', '~> 3.0.0'

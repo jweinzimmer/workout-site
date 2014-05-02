@@ -1,5 +1,5 @@
 = form_for @plan do |f|
-	.small-8.columns
+	.small-10.columns
 		.planwork
 			%h1 New Plan
 			=f.label :name, "Plan Name"
@@ -7,6 +7,15 @@
 			%br
 			= f.label :days_performed
 			= f.text_field :days_performed
+			%br
+			= f.label :start_date
+			= f.text_field :start_date
+			/ %br
+			/ = f.label :all_day
+			/ = f.check_box :all_day
+			%br
+			= f.label :end_date
+			= f.text_field :end_date
 			%br
 			= f.file_field :photo
 			= f.label :remote_image_url, "or image URL"					

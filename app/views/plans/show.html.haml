@@ -1,18 +1,25 @@
-.div.text-centered
-	%h1
-		= @plan.name
-		%br 
-		Days Performed: 
-		= @plan.days_performed
-		%br
-		%strong= link_to "Start Adding Workouts to Your Plan", new_workout_path
-		%br
-		- if !@plan.photo_file_name.nil? && @plan.photo_content_type == 'image/jpeg' || @plan.photo_content_type == 'image/png'
-			= image_tag @plan.photo.url(:original)
-		- if !@plan.photo_file_name.nil? && @plan.photo_content_type == 'application/pdf'	
-			= link_to 'My Workout PDF Complete Version', @plan.photo.url
-	.row
-		%ul.small-8.columns
+.small-8.columns
+	.small-2.columns.pix
+	.div.text-centered.small-8.columns
+		%h9
+			.small-12.columns
+				.small-3.columns.small-centered= @plan.name
+			%br
+			.small-12.columns.small-centered 
+				Days Performed: 
+				= @plan.days_performed
+				%br
+			.small-12.columns
+				.small-10.columns.small-centered
+					%strong= link_to "Start Adding Workouts to Your Plan", new_workout_path
+			%br
+			- if !@plan.photo_file_name.nil? && @plan.photo_content_type == 'image/jpeg' || @plan.photo_content_type == 'image/png'
+				= image_tag @plan.photo.url(:original)
+			- if !@plan.photo_file_name.nil? && @plan.photo_content_type == 'application/pdf'	
+				= link_to 'My Workout PDF Complete Version', @plan.photo.url
+		.small-2.columns.pix
+	.small-12.columns
+		%ul
 			- @plan.workouts.each do |f|
 				%li.panel.callout.radius
 

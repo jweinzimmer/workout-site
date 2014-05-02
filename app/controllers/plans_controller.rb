@@ -1,12 +1,37 @@
 class PlansController < ApplicationController
+  # respond_to :json
   def show
     @plan = Plan.find(params[:id])
   end
 
   def index
-    @plans = current_user.plans.all
+    # @plans = current_user.plans.all
+    # events = []
+    @plans = Plan.all 
+   @plans = Plan.between(params['start'], params['end']) if (params['start'] && params['end']) 
+   # @plans.each do |plan|
+   #    events << {:id => "#{plan.id}", :title => "#{plan.name}", :start => "#{plan.start_date}",:end => "#{plan.end_date}" }
+   #  end 
+   respond_to do |format|  
+    format.html
+    format.json { render json: @plans.to_json}
+    # console.dir("#{plan.name}")
   end
-
+  # render :text => @plans.to_json 
+end
+  
+ def get_plans
+    # respond_to :json
+   
+    events = []
+     @plan = current_user.plans
+    @plan.each do |plan|
+      events << {:id => "#{plan.id}", :title => "#{plan.name}", :start => "#{plan.start_date}",:end => "#{plan.end_date}" }
+    end
+    # render :text => events.to_json
+    # events.to_json
+    # format.json { render json: events }
+  end
   def new
     @plan = Plan.new
     #1.times {@plan.workouts.build}
@@ -17,7 +42,8 @@ def edit
 end
 
   def create
-    @plan = current_user.plans.new(plan_params)
+    # @lat_lng ||= cookies[:lat_lng] ? cookies[:lat_lng].split("|") : nil
+    @plan ||= current_user.plans ? current_user.plans.new(plan_params) : nil
     respond_to do |format|
       if @plan.save
         format.html { redirect_to @plan, notice: 'Workout was successfully created.' }

@@ -10,41 +10,12 @@
  *
 
  *= require_self
+ *= require foundation_and_overrides
+
+
  *= require fullcalendar
  *= require jquery.ui.all
  *= require_tree .
 
 
  */
-/*.form-inputs{
-	width: 300px;
-	float: left;
-	margin-left: 300px;
-}*/
-.leftside li{
-
-margin-bottom: 65px;
-list-style: none;
-}
-.leftside a{
-font-size: 20px;
-
-text-decoration: none;
-list-style: none;
-
-}
-.leftside a:hover
-{
-color: green;
-
-
-
-}
-
-div.leftside
-{
-border: solid;
-border-radius: 25px;
-padding-left: 0px;
-padding-right: 0px;
-}

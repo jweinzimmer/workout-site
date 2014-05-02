@@ -1,4 +1,4 @@
-.small-8.columns
+.small-10.columns
 	%div
 		#calendar
 			
@@ -11,105 +11,18 @@
 			%input#drop-remove{type: "checkbox"}/
 			%label{for: "drop-remove"} remove after drop
 :javascript
-	$('#external-events div.external-event').each(function() {
-
-	var eventObject = {
-	title: $.trim($(this).text()) 
-	};
-
-	$(this).data('eventObject', eventObject);
-
-
-	$(this).draggable({
-	zIndex: 999,
-	revert: true,  
-	revertDuration: 0 
-	});
-
-	});
-
-	$('#calendar').fullCalendar({
-
-	editable: true,
-	eventDrop: function(event,dayDelta,minuteDelta,allDay,revertFunc) {
-	$.ajax({
-	type:"PUT",
-	url: "/events/"+event.id,
-	data: "minute_delta="+minuteDelta+"&day_delta="+dayDelta,
-	});
-	},
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	$(document).ready(function() {
+	$("#calendar").fullCalendar({
 	header: {
-	left: 'prev,next today',
-	center: 'title',
-	right: 'month,agendaWeek,agendaDay'
+	left: "prev,next today",
+	center: "title",
+	right: "month,agendaWeek,agendaDay"
 	},
-	editable: true,
-	droppable: true,
-	drop: function(date, allDay) { 
-
-	
-	var originalEventObject = $(this).data('eventObject');
-
-	
-	var copiedEventObject = $.extend({}, originalEventObject);
-
-	
-	copiedEventObject.start = date;
-	copiedEventObject.allDay = allDay;
-
-
-
-	$('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
-
-
-	if ($('#drop-remove').is(':checked')) {
-
-	$(this).remove();
-	}
-
-	},
-
-	events: [
-	{		
-	
-	title: 'heasdsy',
-	start: '2014-04-10',
-	url: 'http://localhost:3000/plans'
-	
-	}
-
-	        ],
-	        eventClick: function(event) {
-	        if (event.url) {
-	        window.open(event.url);
-	        return false;
-	        }
-	        }
-	        });
+	defaultView: "month",
+	height: 500,
+	slotMinutes: 15,
+	events: "/plans",
+	timeFormat: "h:mm t{ - h:mm t} ",
+	dragOpacity: "0.5"
+		});
+	});	

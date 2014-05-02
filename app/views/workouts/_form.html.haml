@@ -8,52 +8,61 @@
       %ul
         - @workout.errors.full_messages.each do |msg|
           %li= msg
-  .small-8.columns
-    %h1 Gym workout
-    .field
-      = f.label :plan_id, "Plan"
-      .searchf= f.collection_select( :plan_id, current_user.plans.all, :id, :name)
-    .field.searchf
-      = f.label :details
-      / = f.select(:request, "id", Workout.find(:all).collect { |c| [c.name, c.id] }))
-      .searchf= f.select :details, all_workouts
-    .field
-      = f.label :duration_of_workout
-      %br
-      .searchf= f.number_field :duration_of_workout
-    .field.swim-optional
-      = f.label :swim_workout_type, "Swim Type"
-      .searchf= f.select :swim_workout_type, ["", "Back Stroke", "Breast Stroke", "Butterfly", "Free Stroke", "Side Stroke", "Mixed"]
-    .field.bike-optional
-      = f.label :bike_workout_type, "Bike Type"
-      .searchf= f.select :bike_workout_type, ["", "Easy", "Hill", "Interval", "Long", "Tempo", "Race", "Fartlek"]
-    .field.run-optional
-      = f.label :run_workout_type, "Run Type"
-      .searchf= f.select :run_workout_type, ["", "Easy", "Hill", "Interval", "Long", "Tempo", "Race", "Fartlek"]
-    .field.weight-optional
-      = f.label :weights_workout_type, "Weight Type"
-      .searchf= f.select :weights_workout_type, ["", "Bench", "Squat", "Dead Lift", "Upright Row", "Lat pulldowns"]
-    .hidden
-      %strong#remove Sets
-    .optional-fields        
-      = f.fields_for :workout_sets do |f|
-        .fields
-          %h2.seth
-          .fieldsx.setbar
-            = f.label :reps
-            = f.number_field :reps
-          x
-          .setbar.fieldsx
-            = f.label :weight
-            = f.number_field :weight
-          .field
-            = f.hidden_field :_destroy
-            #remove= link_to_remove_fields "remove", f
-      .huge2#mtop
-        = link_to_add_fields "Add Set", f, :workout_sets
-      %br
-    .actions
-      #submit= f.submit
+  .small-10.columns
+    .bodyheight.small-3.columns
+    .small-6.columns
+      .row
+        .small-10.columns.small-centered
+          %h1 Gym workout 
+      .field
+        = f.label :plan_id, "Plan"
+        .searchf= f.collection_select( :plan_id, current_user.plans.all, :id, :name)
+      .field.searchf
+        = f.label :details
+        / = f.select(:request, "id", Workout.find(:all).collect { |c| [c.name, c.id] }))
+        .searchf= f.select :details, all_workouts
+      .field.row
+        .small-8.columns
+          = f.label :duration_of_workout
+          %br
+          .searchf= f.number_field :duration_of_workout
+        .small-4.columns.mtop
+          Minutes
+      .field.swim-optional
+        = f.label :swim_workout_type, "Swim Type"
+        .searchf= f.select :swim_workout_type, ["", "Back Stroke", "Breast Stroke", "Butterfly", "Free Stroke", "Side Stroke", "Mixed"]
+      .field.bike-optional
+        = f.label :bike_workout_type, "Bike Type"
+        .searchf= f.select :bike_workout_type, ["", "Easy", "Hill", "Interval", "Long", "Tempo", "Race", "Fartlek"]
+      .field.run-optional
+        = f.label :run_workout_type, "Run Type"
+        .searchf= f.select :run_workout_type, ["", "Easy", "Hill", "Interval", "Long", "Tempo", "Race", "Fartlek"]
+      .field.weight-optional
+        = f.label :weights_workout_type, "Weight Type"
+        .searchf= f.select :weights_workout_type, ["", "Bench", "Squat", "Dead Lift", "Upright Row", "Lat pulldowns"]
+      .hidden
+        %strong#remove Sets
+      .optional-fields       
+        = f.fields_for :workout_sets do |f|
+          .fields.small-12.columns
+            .small-5.columns.inline
+              = f.label :reps
+              #{f.number_field :reps}
+            .small-1.columns.xtop x
+            .small-5.columns.inline
+              = f.label :weight
+              = f.number_field :weight
+            .field
+              = f.hidden_field :_destroy
+              .center= link_to_remove_fields "remove", f
+        .huge2#mtop
+          = link_to_add_fields "Add Set", f, :workout_sets
+        %br
+      .actions
+        #submit= f.submit
+      = link_to 'Back', workouts_path
+      = link_to 'Show', @workout
+    .bodyheight.small-3.columns
   
 
-= link_to 'Back', workouts_path
+      

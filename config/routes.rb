@@ -7,7 +7,9 @@ WorkoutWebsite::Application.routes.draw do
   get "workout_sets/destroy"
   get "plans/uploaded_plans"
   get "plans/new_uploaded_plans"
-  resources :plans
+  resources :plans do
+      get :get_plans, on: :collection
+   end
   devise_for :users do
     get "sign_out" => 'devise/sessions#destroy'
   end

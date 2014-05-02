@@ -7,39 +7,44 @@
       %ul
         - @supplement.errors.full_messages.each do |msg|
           %li= msg
-  .small-8.columns.panel
-    %h1 Add Supplement
-    .field
-      = f.select :brand, options_for_select(%w[GNC Publix Vitamin\ Shop])
-    .field
-      = f.label :description
-      %br/
-      = f.text_field :description
-    .field
-      = f.label :opinion
-      %br/
-      = f.text_field :opinion
-    .field
-      = f.label :serving_size
-      %br/
-      = f.number_field :serving_size
-    .field
-      = f.label :price
-      %br/
-      = f.number_field :price
-    .actions
-      =  f.submit
-.small-8.columns.panel
-  %form#frmMCCSearch{action: "http://www.my-calorie-counter.com/Calorie_Counter.asp", method: "get"}
-    %p
-      .field
-        Enter the food or activity to find:
-        %br/
-        %input#txtMCCSearch{maxlength: "70", name: "txtMCCSearch", size: "40", type: "text", value: ""}/
-        %input#btnMCCSearch{name: "btnMCCSearch", type: "submit", value: "Search"}/
-        %br/
-        Powered By: my-calorie-counter.com - the webs Free
-        %a{href: "http://www.my-calorie-counter.com"} Calorie Counter
+  .small-10.columns.panel
+    .small-12.columns
+      .small-6.columns.small-centered
+        %h1 Add Supplement
+        .field
+          = f.select :brand, options_for_select(%w[GNC Publix Vitamin\ Shop])
+        .field
+          = f.label :description
+          %br/
+          = f.text_field :description
+        .field
+          = f.label :opinion
+          %br/
+          = f.text_area :opinion
+        .field
+          = f.label :serving_size
+          %br/
+          = f.number_field :serving_size
+        .field
+          = f.label :price
+          %br/
+          = f.number_field :price
+        .actions
+          =  f.submit
+
+.small-8.columns.panel.callout.radius
+  .small-12.columns
+    .small-6.columns.small-centered
+      %form#frmMCCSearch{action: "http://www.my-calorie-counter.com/Calorie_Counter.asp", method: "get"}
+        %p
+          .field
+            Enter the food or activity to find:
+            %br/
+            %input#txtMCCSearch{maxlength: "70", name: "txtMCCSearch", size: "40", type: "text", value: ""}/
+            %input#btnMCCSearch{name: "btnMCCSearch", type: "submit", value: "Search"}/
+            %br/
+            Powered By: my-calorie-counter.com - the webs Free
+            %a{href: "http://www.my-calorie-counter.com"} Calorie Counter
       
   / my-calorie-counter
   /= link_to 'Back', supplements_path

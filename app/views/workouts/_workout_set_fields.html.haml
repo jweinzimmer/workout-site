@@ -1,12 +1,11 @@
-.fields
-  %h2.seth
-  .setbar.fieldsx
+.fields.small-12.columns
+  .small-5.columns.inline
     = f.label :reps
-    = f.number_field :reps  
-  x
-  .setbar.fieldsx
+    #{f.number_field :reps}
+  .small-1.columns.xtop x
+  .small-5.columns.inline
     = f.label :weight
     = f.number_field :weight
-  .fieldsx
+  .field
     = f.hidden_field :_destroy
-    #remove= link_to_remove_fields "remove", f
+    .center= link_to_remove_fields "remove", f
