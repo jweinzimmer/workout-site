@@ -53,7 +53,7 @@
               = f.label :weight
               = f.number_field :weight
             .field
-              = f.hidden_field :_destroy
+              #removeid= f.hidden_field :_destroy
               .center= link_to_remove_fields "remove", f
         .huge2#mtop
           = link_to_add_fields "Add Set", f, :workout_sets
