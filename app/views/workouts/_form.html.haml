@@ -56,10 +56,10 @@
               #removeid= f.hidden_field :_destroy
               .center= link_to_remove_fields "remove", f
         .huge2#mtop
-          = link_to_add_fields "Add Set", f, :workout_sets
+          .button= link_to_add_fields "Add Set", f, :workout_sets 
         %br
       .actions
-        #submit= f.submit
+        = f.submit 'Submit', :class => 'button'
       = link_to 'Back', workouts_path
       = link_to 'Show', @workout
     .bodyheight.small-3.columns

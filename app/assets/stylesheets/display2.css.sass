@@ -1,8 +1,20 @@
 @import "foundation/components/grid"
+.button
+  background-color: black
+  border-radius: em-calc(5)
+  font-family: 'Karla', Sans-serif
+  a
+    color: white
 
-.row
+.button:hover
+  background-color: grey
+p.button
+  color: white
+  display: inline-block
+.row.data-equalizer.border
   background-color: white
-
+.text-center
+  text-align: center
 .entire
   height: 1100px
 #remove
@@ -36,14 +48,22 @@
   background-color: #000000  
   background-repeat: repeat
   padding: 30px
-  
+
 .bodyheight
   height: 1000px
+#botBG.row
+  border-left: 4px solid #9b9b9b
+  border-right: 4px solid #9b9b9b
+  background-color: black
+  border-top: solid
+  border-bottom: solid
+  padding-bottom: 35px
+  padding-top: 35px
 .topBG
-  background-image: url(green-gradient.jpg)
+  
   background-repeat: repeat-x
-  height: 1506px
   width: 100%
+  
   position: absolute
   z-index: 5000
   font-family:Arial
@@ -60,17 +80,16 @@
   list-style: none
 .leftside a:hover
   color: white
-div.leftside
+.main
+  height: 100%
+.leftside
   color: black
   background-color: black
   margin-top: -50px
-  height: 100%
-  border-right: solid
-  border-top: solid
-  border-bottom: solid
+  height: 1400px
   padding-left: 0px
   padding-right: 0px
   padding-bottom: 0px
   padding-top: 35px
-  margin-bottom: 5px
-  margin-top: 5px
+  margin-bottom: 0px
+  margin-top: 0px
